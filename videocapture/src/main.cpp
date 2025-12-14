@@ -8,7 +8,7 @@
 using namespace cv;
 using namespace std;
 
-// ---------- Shared State ----------
+//Shared State
 atomic<bool> appRunning(true);
 atomic<bool> recording(false);
 atomic<bool> takeSnapshot(false);
@@ -18,12 +18,12 @@ Mat sharedFrame;
 
 VideoWriter videoWriter;
 
-// ---------- Button Areas ----------
+//Button Areas
 Rect btnRecord(20, 60, 160, 50);
 Rect btnSnap(200, 60, 160, 50);
 Rect btnQuit(380, 60, 160, 50);
 
-// ---------- Mouse Callback ----------
+// Mouse Callback
 void onMouse(int event, int x, int y, int, void*) {
     if (event != EVENT_LBUTTONDOWN) return;
 
@@ -41,7 +41,7 @@ void onMouse(int event, int x, int y, int, void*) {
     }
 }
 
-// ---------- Capture Thread ----------
+//Capture Thread
 void captureFrames(VideoCapture& cap) {
     Mat frame;
     while (appRunning) {
@@ -56,7 +56,7 @@ void captureFrames(VideoCapture& cap) {
     }
 }
 
-// ---------- Recording Thread ----------
+//Recording Thread
 void recordVideo() {
     while (appRunning) {
         if (recording) {
@@ -72,7 +72,7 @@ void recordVideo() {
     }
 }
 
-// ---------- Draw Buttons ----------
+//Buttons
 void drawButton(Mat& img, Rect r, const string& text, Scalar color) {
     rectangle(img, r, color, FILLED);
     rectangle(img, r, Scalar(255,255,255), 2);
@@ -89,7 +89,7 @@ void drawButton(Mat& img, Rect r, const string& text, Scalar color) {
         FONT_HERSHEY_SIMPLEX, 0.7, Scalar(255,255,255), 2);
 }
 
-// ---------- MAIN ----------
+
 int main() {
     VideoCapture cap;
 
@@ -133,7 +133,7 @@ int main() {
 
     int snapshotCount = 0;
 
-    // ---------- UI LOOP ----------
+    
     while (appRunning) {
         Mat display;
 
@@ -174,7 +174,7 @@ int main() {
             appRunning = false;
     }
 
-    // ---------- CLEANUP ----------
+  
     t1.join();
     t2.join();
 

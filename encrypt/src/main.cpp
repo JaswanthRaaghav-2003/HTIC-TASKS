@@ -42,7 +42,7 @@ void store_file() {
 
     std::string file_path = folder + "/info.txt";
 
-    // Create readable text
+    
     std::string content =
         "Country: " + country + "\n" +
         "State: " + state + "\n" +
@@ -64,7 +64,7 @@ void store_file() {
     std::cout << "\nFile saved at: " << file_path << "\n";
 }
 
-// Retrieve encrypted file
+// Retrieve
 void retrieve_file() {
     std::cin.ignore();
     std::string country, state, district;
