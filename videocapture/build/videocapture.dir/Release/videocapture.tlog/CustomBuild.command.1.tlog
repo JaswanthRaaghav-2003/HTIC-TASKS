@@ -1,0 +1,10 @@
+^C:\HTIC\VIDEOCAPTURE\CMAKELISTS.TXT
+setlocal
+C:\msys64\mingw64\bin\cmake.exe -SC:/HTIC/videocapture -BC:/HTIC/videocapture/build --check-stamp-file C:/HTIC/videocapture/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

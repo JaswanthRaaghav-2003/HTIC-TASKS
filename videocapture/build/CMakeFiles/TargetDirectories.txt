@@ -1,0 +1,3 @@
+C:/HTIC/videocapture/build/CMakeFiles/videocapture.dir
+C:/HTIC/videocapture/build/CMakeFiles/ALL_BUILD.dir
+C:/HTIC/videocapture/build/CMakeFiles/ZERO_CHECK.dir

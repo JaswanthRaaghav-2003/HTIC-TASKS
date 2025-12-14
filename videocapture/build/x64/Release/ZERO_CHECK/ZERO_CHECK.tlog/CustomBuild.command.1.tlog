@@ -1,0 +1,10 @@
+^C:\HTIC\VIDEOCAPTURE\BUILD\CMAKEFILES\DB3F1A2682968BD7745CDD936D281FE2\GENERATE.STAMP.RULE
+setlocal
+C:\msys64\mingw64\bin\cmake.exe -SC:/HTIC/videocapture -BC:/HTIC/videocapture/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/HTIC/videocapture/build/videocapture.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
